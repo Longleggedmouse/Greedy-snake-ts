@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$font-color:#000;
+.box{
+  background-color: #FFF;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.food{
+  border-radius: 50%;
+  animation: beat 2s infinite linear;
+  box-shadow: 0 0 5px 5px #fff;
+}
+#snake .head{
+  bottom: 0;
+}
+@keyframes beat{
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(1.2);
+  }
+  50%{
+    transform: scale(1);
+  }
+  75%{
+    transform: scale(.8);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+main{
+  width: 1200px;
+  height: 650px;
+  color:$font-color;
+  border: 10px solid #333;
+  border-radius: 30px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .stage{
+    width: 1150px;
+    height: 450px;
+    background-color: #000;
+    position: relative;
+    .tips{
+      width: 70%;
+      color: #fff;
+      font-size: 60px;
+      position: absolute;
+      opacity: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -130px;
+      text-align: center;
+      &.show{
+        transition: all 2s linear;
+        opacity: 1;
+        font-size: 100px;
+        bottom: 50%;
+        transform:translateX(-50%) translateY(50%);
+      }
+    }
+    
+  }
+  .score_panel{
+    background-color: #ccc;
+    height: 90px;
+    width:1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 99;
+    .score_number ,.level{
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+}
